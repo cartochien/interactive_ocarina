@@ -45,7 +45,7 @@ function setup() {
     //centers canvas to middle of screen
     var cnv = createCanvas(600,400);  
     var x = (windowWidth - width) / 2;
-    var y = (windowHeight - height) / 2;
+    var y = 0;
     cnv.position(x, y);
     image(img[5],0,0, 600, 400); 
 }
