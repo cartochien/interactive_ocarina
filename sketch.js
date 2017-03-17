@@ -48,17 +48,16 @@ function setup() {
     var y = (windowHeight - height) / 2;
     cnv.position(x, y);
     image(img[5],0,0, 600, 400); 
-    rectMode(CENTER);
 }
 
-function button() { //controls button function
-    var x = document.getElementById('controlsButton');
-    if (x.style.display !== 'none') {
-        x.style.display = 'none';
-    } else {
-        x.style.display = 'block';
-    }
-}
+//function button() { //controls button function
+//    var x = document.getElementById('controlsButton');
+//    if (x.style.display !== 'none') {
+//        x.style.display = 'none';
+//    } else {
+//        x.style.display = 'block';
+//    }
+//}
 
 function draw() {
     
@@ -68,12 +67,12 @@ function draw() {
     
     console.log(keyrecorder);
     
-    if (keyrecorder.search("CADCAD") >= 0) { //Zelda's Lullaby...purple/white swirl
+    if (keyrecorder.search("CADCAD") >= 0) { //Zelda's Lullaby
         image(img[5],0,0, 600, 400);
         effects[0].play();
         songs[6].play(0.5);
         keyrecorder = "";
-    } else if (keyrecorder.search("BDCBDC") >= 0) { //Saria's Song...green swirl with leaves
+    } else if (keyrecorder.search("BDCBDC") >= 0) { //Saria's Song
         image(img[5],0,0, 600, 400);
         effects[0].play();
         songs[7].play(0.2);
@@ -81,7 +80,7 @@ function draw() {
         effects[8].play(7); //"listen!"
         effects[9].play(8); //Saria laughs
         keyrecorder = "";
-    } else if (keyrecorder.search("DBADBA") >= 0) { //Sun's Song...yellow cylinder 
+    } else if (keyrecorder.search("DBADBA") >= 0) { //Sun's Song 
         image(img[5],0,0, 600, 400);
         effects[0].play();
         songs[8].play();
@@ -91,22 +90,21 @@ function draw() {
                 effects[4].play(5.5); //if time is between 6am and 6pm, Sun's Song changes day to night and wolf howls
     }
         keyrecorder = "";
-    } else if (keyrecorder.search("EBAEBA") >= 0) { //Song of Storms...sandy beige cylinder 
-        image(img[5],0,0, 600, 400);
+    } else if (keyrecorder.search("EBAEBA") >= 0) { //Song of Storms
         effects[0].play();
         songs[9].play();
         effects[6].play(4.5); //thunder
         effects[6].play(5.2);
         effects[6].play(6.2);
         keyrecorder = "";
-    } else if (keyrecorder.search("DEBDEB") >= 0) { //Song of Time...blue/white swirl
+    } else if (keyrecorder.search("DEBDEB") >= 0) { //Song of Time
         image(img[5],0,0, 600, 400);
         effects[0].play();
         songs[10].play();
         effects[10].play(10);
         effects[11].play(15);
         keyrecorder = "";
-    } else if (keyrecorder.search("ACDACD") >= 0) { //Epona's Song...orange swirl ith music notes
+    } else if (keyrecorder.search("ACDACD") >= 0) { //Epona's Song
         image(img[5],0,0, 600, 400);
         effects[0].play();
         songs[11].play();
@@ -121,7 +119,7 @@ function draw() {
         effects[0].play();
         songs[0].play();
         keyrecorder = "";
-    } else if (keyrecorder.search("BEBEDBDB") >= 0) { //Bolero of Fire AND AMPLITUDE
+    } else if (keyrecorder.search("BEBEDBDB") >= 0) { //Bolero of Fire
         image(img[5],0,0, 600, 400);
         effects[0].play();
         songs[1].play();
