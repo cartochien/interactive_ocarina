@@ -50,14 +50,14 @@ function setup() {
     image(img[5],0,0, 600, 400); 
 }
 
-//function button() { //controls button function
-//    var x = document.getElementById('controlsButton');
-//    if (x.style.display !== 'none') {
-//        x.style.display = 'none';
-//    } else {
-//        x.style.display = 'block';
-//    }
-//}
+function button() { //controls button function
+   var x = document.getElementById('controlsButton');
+   if (x.style.display !== 'none') {
+       x.style.display = 'none';
+   } else {
+       x.style.display = 'block';
+   }
+}
 
 function draw() {
     
