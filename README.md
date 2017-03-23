@@ -1,7 +1,7 @@
 # ocarina-of-time
 This is the source code for my interactive [Ocarina of Time](https://whiteplums.github.io/ocarina-of-time/index.html) originally made for my ART22 class.
 
-![ScreenShot](images/preview.png)
+![ScreenShot](images/preview.PNG)
 
 ## Features
 - Interactive ocarina that plays the same five notes as the ocarina from The Legend of Zelda: Ocarina of Time. Arrow
