@@ -121,7 +121,7 @@ function draw() {
         songs[0].play();
         keyrecorder = "";
     } else if (keyrecorder.search("BEBEDBDB") >= 0) { //Bolero of Fire AND AMPLITUDE
-        image(img[5],0,0, 600, 400);
+        image(img[5],0,0, 550,366.67);
         effects[0].play();
         songs[1].play();
         //fill(30,60,50);
