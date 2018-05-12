@@ -1,3 +1,12 @@
+body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fec7bc+0,fea290+45,ff785d+100 */
+    background: #fec7bc; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #fec7bc 0%, #fea290 45%, #ff785d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #fec7bc 0%,#fea290 45%,#ff785d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #fec7bc 0%,#fea290 45%,#ff785d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec7bc', endColorstr='#ff785d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
 button {
 margin-top:30%;
 font-family: Karla, serif;
