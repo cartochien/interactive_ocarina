@@ -2,52 +2,45 @@ var pitches = [];
 var pitchNames = ['pitches/d', 'pitches/f', 'pitches/a', 'pitches/b', 'pitches/d2'];
 
 var effects = [];
-var effectNames = ['effects/songCorrect', 'effects/eponaNeigh', 'effects/eponaGallop', 'effects/cuccoMorning', 'effects/wolfNight', 'effects/rain', 'effects/thunder', 'effects/naviHey', 'effects/naviListen', 'effects/sariaLaugh', 'effects/doorTimeOpen','effects/doorTimeSlam'];
+var effectNames = ['effects/songCorrect', 'effects/eponaNeigh', 'effects/eponaGallop', 'effects/cuccoMorning', 'effects/wolfNight', 'effects/rain', 'effects/thunder', 'effects/naviHey', 'effects/naviListen', 'effects/sariaLaugh', 'effects/doorTimeOpen', 'effects/doorTimeSlam'];
 
 var songs = [];
-var songNames = ['songs/forest', 'songs/fire', 'songs/water', 'songs/shadow', 'songs/spirit', 'songs/light', 'songs/zeldaLullaby','songs/sariaSong','songs/sunSong','songs/songStorm','songs/songTime','songs/eponaSong']; 
+var songNames = ['songs/forest', 'songs/fire', 'songs/water', 'songs/shadow', 'songs/spirit', 'songs/light', 'songs/zeldaLullaby', 'songs/sariaSong', 'songs/sunSong', 'songs/songStorm', 'songs/songTime', 'songs/eponaSong'];
 var img = [];
-var imgNames = ['images/ocD', 'images/ocF', 'images/ocA', 'images/ocB', 'images/ocD2', 'images/oc']; 
+var imgNames = ['images/oc_d', 'images/oc_f', 'images/oc_a', 'images/oc_b', 'images/oc_d2', 'images/oc_default'];
 
 var keyrecorder = "";
-
 var amplitude;
-
 var currentTime = new Date().getHours();
-
 var rectsize;
 
 function preload() {
-    
+
     //array of ocarina sounds and video game sound effects
-    for(var i = 0; i < pitchNames.length; i++)
-        {
-            pitches[i] = loadSound(pitchNames[i] + '.wav');
-        }
+    for (var i = 0; i < pitchNames.length; i++) {
+        pitches[i] = loadSound(pitchNames[i] + '.wav');
+    }
     //array of in-game songs
-    for(var i = 0; i < songNames.length; i++)
-        {
-            songs[i] = loadSound(songNames[i] + '.mp3');
-        }
+    for (var i = 0; i < songNames.length; i++) {
+        songs[i] = loadSound(songNames[i] + '.mp3');
+    }
     //array of ocarina images
-    for(var i = 0; i < imgNames.length; i++)
-        {
-            img[i] = loadImage(imgNames[i] + '.png');
-        }
+    for (var i = 0; i < imgNames.length; i++) {
+        img[i] = loadImage(imgNames[i] + '.png');
+    }
     //array of sound effects    
-    for(var i = 0; i < effectNames.length; i++)
-        {
-            effects[i] = loadSound(effectNames[i] + '.wav');
-        }
+    for (var i = 0; i < effectNames.length; i++) {
+        effects[i] = loadSound(effectNames[i] + '.wav');
+    }
 }
 
 function setup() {
     //centers canvas to middle of screen
-    var cnv = createCanvas(550,366.67);  
+    var cnv = createCanvas(600, 590.8);
     var x = (windowWidth - width) / 2;
     var y = 40; // 2;
     cnv.position(x, y);
-    image(img[5],0,0, 550,366.67); 
+    image(img[5], 0, 0, 600, 590.8);
 }
 
 function button() { //controls button function
@@ -60,20 +53,20 @@ function button() { //controls button function
 }
 
 function draw() {
-    
+
     if (keyrecorder.length > 8) {
-        keyrecorder = keyrecorder.substr(1,8);
+        keyrecorder = keyrecorder.substr(1, 8);
     }
-    
+
     console.log(keyrecorder);
-    
+
     if (keyrecorder.search("CADCAD") >= 0) { //Zelda's Lullaby
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[6].play(0.5);
         keyrecorder = "";
     } else if (keyrecorder.search("BDCBDC") >= 0) { //Saria's Song
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[7].play(0.2);
         effects[7].play(6.5); //Navi says "hey!"
@@ -81,17 +74,17 @@ function draw() {
         effects[9].play(8); //Saria laughs
         keyrecorder = "";
     } else if (keyrecorder.search("DBADBA") >= 0) { //Sun's Song
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[8].play();
-            if (currentTime >= 6 && currentTime <= 18) {
-                effects[4].play(5.5); //if time is between 6am and 6pm, Sun's Song changes day to night and wolf howls
-            } else {
-                effects[3].play(5.5); //if time is between 6pm and 6am, Sun's Song changes night to day and cucco cockadoodledoos
-    }
+        if (currentTime >= 6 && currentTime <= 18) {
+            effects[4].play(5.5); //if time is between 6am and 6pm, Sun's Song changes day to night and wolf howls
+        } else {
+            effects[3].play(5.5); //if time is between 6pm and 6am, Sun's Song changes night to day and cucco cockadoodledoos
+        }
         keyrecorder = "";
     } else if (keyrecorder.search("EBAEBA") >= 0) { //Song of Storms 
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[9].play();
         effects[6].play(4.5); //thunder
@@ -99,14 +92,14 @@ function draw() {
         effects[6].play(6.2);
         keyrecorder = "";
     } else if (keyrecorder.search("DEBDEB") >= 0) { //Song of Time
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[10].play();
         effects[10].play(10);
         effects[11].play(15);
         keyrecorder = "";
     } else if (keyrecorder.search("ACDACD") >= 0) { //Epona's Song
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[11].play();
         effects[1].play(8.2); //Epona neighs
@@ -116,12 +109,12 @@ function draw() {
         effects[2].play(10.2);
         keyrecorder = "";
     } else if (keyrecorder.search("EACDCD") >= 0) { //Minuet of Forest 
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[0].play();
         keyrecorder = "";
     } else if (keyrecorder.search("BEBEDBDB") >= 0) { //Bolero of Fire AND AMPLITUDE
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[1].play();
         //fill(30,60,50);
@@ -129,49 +122,52 @@ function draw() {
         //rect(width/2, height/2, rectsize, rectsize);
         keyrecorder = "";
     } else if (keyrecorder.search("EBDDC") >= 0) { //Serenade of Water 
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[2].play();
         keyrecorder = "";
     } else if (keyrecorder.search("CDDECDB") >= 0) { //Nocturne of Shadow 
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[3].play();
         keyrecorder = "";
     } else if (keyrecorder.search("EBEDBE") >= 0) { //Requiem of Spirit 
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[4].play();
         keyrecorder = "";
     } else if (keyrecorder.search("ADADCA") >= 0) { //Prelude of Light
-        image(img[5],0,0, 550,366.67);
+        image(img[5], 0, 0, 600, 590.8);
         effects[0].play();
         songs[5].play();
         keyrecorder = "";
-    }  
-}
-    
-function keyPressed() {
-    if(keyCode == UP_ARROW) {
-        pitches[4].play();
-        image(img[4],0,0,550,366.67);
-        keyrecorder = keyrecorder + "A"
-    } if (keyCode == DOWN_ARROW) {
-        pitches[1].play();
-        image(img[1],0,0,550,366.67);
-        keyrecorder = keyrecorder + "B"
-    } if (keyCode == LEFT_ARROW) {
-        pitches[3].play();
-        image(img[3],0,0,550,366.67);
-        keyrecorder = keyrecorder + "C"
-    } if (keyCode == RIGHT_ARROW) {
-        pitches[2].play();
-        image(img[2],0,0,550,366.67);
-        keyrecorder = keyrecorder + "D"
-    } if (keyCode == "65") { //press 'A' to play d note
-        pitches[0].play();
-        image(img[0],0,0,550,366.67);
-        keyrecorder = keyrecorder + "E"
-    } 
+    }
 }
 
+function keyPressed() {
+    if (keyCode == UP_ARROW) {
+        pitches[4].play();
+        image(img[4], 0, 0, 600, 590.8);
+        keyrecorder = keyrecorder + "A"
+    }
+    if (keyCode == DOWN_ARROW) {
+        pitches[1].play();
+        image(img[1], 0, 0, 600, 590.8);
+        keyrecorder = keyrecorder + "B"
+    }
+    if (keyCode == LEFT_ARROW) {
+        pitches[3].play();
+        image(img[3], 0, 0, 600, 590.8);
+        keyrecorder = keyrecorder + "C"
+    }
+    if (keyCode == RIGHT_ARROW) {
+        pitches[2].play();
+        image(img[2], 0, 0, 600, 590.8);
+        keyrecorder = keyrecorder + "D"
+    }
+    if (keyCode == "65") { //press 'A' to play d note
+        pitches[0].play();
+        image(img[0], 0, 0, 600, 590.8);
+        keyrecorder = keyrecorder + "E"
+    }
+}
