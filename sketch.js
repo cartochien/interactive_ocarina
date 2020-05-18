@@ -7,7 +7,7 @@ var effectNames = ['effects/songCorrect', 'effects/eponaNeigh', 'effects/eponaGa
 var songs = [];
 var songNames = ['songs/forest', 'songs/fire', 'songs/water', 'songs/shadow', 'songs/spirit', 'songs/light', 'songs/zeldaLullaby', 'songs/sariaSong', 'songs/sunSong', 'songs/songStorm', 'songs/songTime', 'songs/eponaSong'];
 var img = [];
-var imgNames = ['images/oc_d', 'images/oc_f', 'images/oc_a', 'images/oc_b', 'images/oc_d2', 'images/oc_default'];
+var imgNames = ['images/oc_d', 'images/oc_f', 'images/oc_a', 'images/oc_b', 'images/oc_d2', 'images/oc_default', 'images/oc_blank'];
 
 var keyrecorder = "";
 var amplitude;
@@ -41,15 +41,6 @@ function setup() {
     var y = 40; // 2;
     cnv.position(x, y);
     image(img[5], 0, 0, 600, 590.8);
-}
-
-function button() { //controls button function
-    var x = document.getElementById('controlsButton');
-    if (x.style.display !== 'none') {
-        x.style.display = 'none';
-    } else {
-        x.style.display = 'block';
-    }
 }
 
 function draw() {
@@ -169,5 +160,8 @@ function keyPressed() {
         pitches[0].play();
         image(img[0], 0, 0, 600, 590.8);
         keyrecorder = keyrecorder + "E"
+    }
+    else {
+        image(img[6], 0, 0, 600, 590.8);
     }
 }
