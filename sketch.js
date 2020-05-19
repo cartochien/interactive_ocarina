@@ -44,12 +44,9 @@ function setup() {
 }
 
 function draw() {
-
     if (keyrecorder.length > 8) {
         keyrecorder = keyrecorder.substr(1, 8);
     }
-
-    console.log(keyrecorder);
 
     if (keyrecorder.search("CADCAD") >= 0) { //Zelda's Lullaby
         image(img[5], 0, 0, 420, 413.56);
@@ -161,4 +158,8 @@ function keyPressed() {
         image(img[0], 0, 0, 420, 413.56);
         keyrecorder = keyrecorder + "E"
     }
+}
+
+function keyReleased() {
+    image(img[6], 0, 0, 420, 413.56);
 }
