@@ -161,7 +161,4 @@ function keyPressed() {
         image(img[0], 0, 0, 420, 413.56);
         keyrecorder = keyrecorder + "E"
     }
-    else {
-        image(img[6], 0, 0, 420, 413.56);
-    }
 }
