@@ -7,13 +7,13 @@ background: linear-gradient(135deg,  #febbbb 0%,#ef8d8d 100%); /* W3C, IE10+, FF
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb', endColorstr='#ef8d8d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-button {
+/*button {
 margin-top:30%;
 font-family: Karla, serif;
 color: #000000;
 background: rgba(0,0,0,0);
 border: solid 0.5px #585858;
-}
+}*/
 
 /*#controlsButton {
 font-family: Karla, serif;
