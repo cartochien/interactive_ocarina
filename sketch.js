@@ -36,11 +36,11 @@ function preload() {
 
 function setup() {
     //centers canvas to middle of screen
-    var cnv = createCanvas(420, 413.56);
+    var cnv = createCanvas(420, 437.5);
     var x = (windowWidth - width) / 2;
     var y = 40; // 2;
     cnv.position(x, y);
-    image(img[5], 0, 0, 420, 413.56);
+    image(img[5], 0, 0, 420, 437.5);
 }
 
 function draw() {
@@ -97,9 +97,6 @@ function draw() {
     } else if (keyrecorder.search("BEBEDBDB") >= 0) { //Bolero of Fire AND AMPLITUDE
         effects[0].play();
         songs[1].play();
-        //fill(30,60,50);
-        //rectsize = map(amplitude.getLevel(), 0,1,0,1000);
-        //rect(width/2, height/2, rectsize, rectsize);
         keyrecorder = "";
     } else if (keyrecorder.search("EBDDC") >= 0) { //Serenade of Water 
         effects[0].play();
@@ -123,31 +120,31 @@ function draw() {
 function keyPressed() {
     if (keyCode == UP_ARROW) {
         pitches[4].play();
-        image(img[4], 0, 0, 420, 413.56);
+        image(img[4], 0, 0, 420, 437.5);
         keyrecorder = keyrecorder + "A"
     }
     if (keyCode == DOWN_ARROW) {
         pitches[1].play();
-        image(img[1], 0, 0, 420, 413.56);
+        image(img[1], 0, 0, 420, 437.5);
         keyrecorder = keyrecorder + "B"
     }
     if (keyCode == LEFT_ARROW) {
         pitches[3].play();
-        image(img[3], 0, 0, 420, 413.56);
+        image(img[3], 0, 0, 420, 437.5);
         keyrecorder = keyrecorder + "C"
     }
     if (keyCode == RIGHT_ARROW) {
         pitches[2].play();
-        image(img[2], 0, 0, 420, 413.56);
+        image(img[2], 0, 0, 420, 437.5);
         keyrecorder = keyrecorder + "D"
     }
     if (keyCode == "65") { //press 'A' to play d note
         pitches[0].play();
-        image(img[0], 0, 0, 420, 413.56);
+        image(img[0], 0, 0, 420, 437.5);
         keyrecorder = keyrecorder + "E"
     }
 }
 
 function keyReleased() {
-    image(img[6], 0, 0, 420, 413.56).delay(5);
+    image(img[6], 0, 0, 420, 437.5).delay(5);
 }
