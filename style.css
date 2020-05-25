@@ -1,8 +1,13 @@
 .cc-background {
-background-image: url('/images/background.png');
+background-image: url('images/background.png');
 background-position: center center;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
 }
 
+.cc-centered {
+    display:inline-block;
+    float:none;
+    text-align: center;
+}
