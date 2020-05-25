@@ -148,7 +148,7 @@ function mouseMoved() {
     }
 }
 
-function mousePressed() {
+var touchStarted = mousePressed = function() {
     var dNoteInside = dist(mouseX, mouseY, 124, 413);
     var fNoteInside = dist(mouseX, mouseY, 168, 402);
     var aNoteInside = dist(mouseX, mouseY, 210, 388);
@@ -183,7 +183,7 @@ function mousePressed() {
     }
 }
 
-function mouseReleased() {
+var touchEnded = mouseReleased = function() {
     clear();
     image(img[5], 0, 0, 420, 437.5);
 }
@@ -220,4 +220,10 @@ function keyPressed() {
 function keyReleased() {
     clear();
     image(img[5], 0, 0, 420, 437.5);
+}
+
+function touchStarted() {
+  ellipse(mouseX, mouseY, 5, 5);
+  // prevent default
+  return false;
 }
