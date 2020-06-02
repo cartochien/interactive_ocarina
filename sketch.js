@@ -223,38 +223,39 @@ function keyReleased() {
 }
 
 function touchStarted() {
-    var dNoteInside = dist(mouseX, mouseY, 124, 413);
-    var fNoteInside = dist(mouseX, mouseY, 168, 402);
-    var aNoteInside = dist(mouseX, mouseY, 210, 388);
-    var bNoteInside = dist(mouseX, mouseY, 253, 375);
-    var d2NoteInside = dist(mouseX, mouseY, 296, 364);
+    image(img[1], 0, 0, 420, 437.5);
+    // var dNoteInside = dist(mouseX, mouseY, 124, 413);
+    // var fNoteInside = dist(mouseX, mouseY, 168, 402);
+    // var aNoteInside = dist(mouseX, mouseY, 210, 388);
+    // var bNoteInside = dist(mouseX, mouseY, 253, 375);
+    // var d2NoteInside = dist(mouseX, mouseY, 296, 364);
 
-    if (dNoteInside < 15.5) {
-        clear();
-        pitches[0].play();
-        image(img[0], 0, 0, 420, 437.5);
-        keyrecorder = keyrecorder + "E"
-    } else if (fNoteInside < 15.5) {
-        clear();
-        pitches[1].play();
-        image(img[1], 0, 0, 420, 437.5);
-        keyrecorder = keyrecorder + "B"
-    } else if (aNoteInside < 15.5) {
-        clear();
-        pitches[2].play();
-        image(img[2], 0, 0, 420, 437.5);
-        keyrecorder = keyrecorder + "D"
-    } else if (bNoteInside < 15.5) {
-        clear();
-        pitches[3].play();
-        image(img[3], 0, 0, 420, 437.5);
-        keyrecorder = keyrecorder + "C"
-    } else if (d2NoteInside < 15.5) {
-        clear();
-        pitches[4].play();
-        image(img[4], 0, 0, 420, 437.5);
-        keyrecorder = keyrecorder + "A"
-    }
+    // if (dNoteInside < 15.5) {
+    //     clear();
+    //     pitches[0].play();
+    //     image(img[0], 0, 0, 420, 437.5);
+    //     keyrecorder = keyrecorder + "E"
+    // } else if (fNoteInside < 15.5) {
+    //     clear();
+    //     pitches[1].play();
+    //     image(img[1], 0, 0, 420, 437.5);
+    //     keyrecorder = keyrecorder + "B"
+    // } else if (aNoteInside < 15.5) {
+    //     clear();
+    //     pitches[2].play();
+    //     image(img[2], 0, 0, 420, 437.5);
+    //     keyrecorder = keyrecorder + "D"
+    // } else if (bNoteInside < 15.5) {
+    //     clear();
+    //     pitches[3].play();
+    //     image(img[3], 0, 0, 420, 437.5);
+    //     keyrecorder = keyrecorder + "C"
+    // } else if (d2NoteInside < 15.5) {
+    //     clear();
+    //     pitches[4].play();
+    //     image(img[4], 0, 0, 420, 437.5);
+    //     keyrecorder = keyrecorder + "A"
+    // }
 }
 
 function touchEnded() {
