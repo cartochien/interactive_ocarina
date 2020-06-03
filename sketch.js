@@ -37,11 +37,42 @@ function preload() {
 
 function setup() {
     var cnv = createCanvas(420, 437.5);
+    
+    buttonD = createButton('');
+    buttonD.position(117, 406);
+    buttonD.size(30,30);
+    buttonD.style('opacity:0');
+    buttonD.mousePressed(noteD);
+
+    buttonF = createButton('');
+    buttonF.position(161, 395);
+    buttonF.size(30,30);
+    buttonF.style('opacity:0');
+    buttonF.mousePressed(noteF);
+
+    buttonA = createButton('');
+    buttonA.position(203, 380);
+    buttonA.size(30,30);
+    buttonA.style('opacity:0');
+    buttonA.mousePressed(noteA);
+
+    buttonB = createButton('');
+    buttonB.position(246, 368);
+    buttonB.size(30,30);
+    buttonB.style('opacity:0');
+    buttonB.mousePressed(noteB);
+
+    buttonD2 = createButton('');
+    buttonD2.position(289, 356);
+    buttonD2.size(30,30);
+    buttonD2.style('opacity:0');
+    buttonD2.mousePressed(noteD2);
 
     image(img[5], 0, 0, 420, 437.5);
 }
 
 function draw() {
+    console.log(keyrecorder);
     if (keyrecorder.length > 8) {
         keyrecorder = keyrecorder.substr(1, 8);
     }
@@ -114,6 +145,41 @@ function draw() {
     }
 }
 
+function noteD() {
+    clear();
+    pitches[0].play();
+    image(img[0], 0, 0, 420, 437.5);
+    keyrecorder = keyrecorder + "E"
+}
+
+function noteF() {
+    clear();
+    pitches[1].play();
+    image(img[1], 0, 0, 420, 437.5);
+    keyrecorder = keyrecorder + "B"
+}
+
+function noteA() {
+    clear();
+    pitches[2].play();
+    image(img[2], 0, 0, 420, 437.5);
+    keyrecorder = keyrecorder + "D"
+}
+
+function noteB() {
+    clear();
+    pitches[3].play();
+    image(img[3], 0, 0, 420, 437.5);
+    keyrecorder = keyrecorder + "C"
+}
+
+function noteD2() {
+    clear();
+    pitches[4].play();
+    image(img[4], 0, 0, 420, 437.5);
+    keyrecorder = keyrecorder + "A"
+}
+
 function mouseMoved() {
     var dNoteInside = dist(mouseX, mouseY, 124, 413);
     var fNoteInside = dist(mouseX, mouseY, 168, 402);
@@ -123,65 +189,65 @@ function mouseMoved() {
 
     if (dNoteInside < 15.5) {
         clear();
-        cursor(HAND);
+        // cursor(HAND);
         image(img[6], 0, 0, 420, 437.5); 
     } else if (fNoteInside < 15.5) {
         clear();
-        cursor(HAND); 
+        // cursor(HAND); 
         image(img[7], 0, 0, 420, 437.5);
     } else if (aNoteInside < 15.5) {
         clear();
-        cursor(HAND); 
+        // cursor(HAND); 
         image(img[8], 0, 0, 420, 437.5);
     } else if (bNoteInside < 15.5) {
         clear();
-        cursor(HAND); 
+        // cursor(HAND); 
         image(img[9], 0, 0, 420, 437.5);
     } else if (d2NoteInside < 15.5) {
         clear();
-        cursor(HAND); 
+        // cursor(HAND); 
         image(img[10], 0, 0, 420, 437.5);
     } else {
         clear();
-        cursor(ARROW);
+        // cursor(ARROW);
         image(img[5], 0, 0, 420, 437.5);
     }
 }
 
-function mousePressed() {
-    var dNoteInside = dist(mouseX, mouseY, 124, 413);
-    var fNoteInside = dist(mouseX, mouseY, 168, 402);
-    var aNoteInside = dist(mouseX, mouseY, 210, 388);
-    var bNoteInside = dist(mouseX, mouseY, 253, 375);
-    var d2NoteInside = dist(mouseX, mouseY, 296, 364);
+// function mousePressed() {
+//     var dNoteInside = dist(mouseX, mouseY, 124, 413);
+//     var fNoteInside = dist(mouseX, mouseY, 168, 402);
+//     var aNoteInside = dist(mouseX, mouseY, 210, 388);
+//     var bNoteInside = dist(mouseX, mouseY, 253, 375);
+//     var d2NoteInside = dist(mouseX, mouseY, 296, 364);
 
-    if (dNoteInside < 15.5) {
-        clear();
-        pitches[0].play();
-        image(img[0], 0, 0, 420, 437.5);
-        keyrecorder = keyrecorder + "E"
-    } else if (fNoteInside < 15.5) {
-        clear();
-        pitches[1].play();
-        image(img[1], 0, 0, 420, 437.5);
-        keyrecorder = keyrecorder + "B"
-    } else if (aNoteInside < 15.5) {
-        clear();
-        pitches[2].play();
-        image(img[2], 0, 0, 420, 437.5);
-        keyrecorder = keyrecorder + "D"
-    } else if (bNoteInside < 15.5) {
-        clear();
-        pitches[3].play();
-        image(img[3], 0, 0, 420, 437.5);
-        keyrecorder = keyrecorder + "C"
-    } else if (d2NoteInside < 15.5) {
-        clear();
-        pitches[4].play();
-        image(img[4], 0, 0, 420, 437.5);
-        keyrecorder = keyrecorder + "A"
-    }
-}
+//     if (dNoteInside < 15.5) {
+//         clear();
+//         pitches[0].play();
+//         image(img[0], 0, 0, 420, 437.5);
+//         keyrecorder = keyrecorder + "E"
+//     } else if (fNoteInside < 15.5) {
+//         clear();
+//         pitches[1].play();
+//         image(img[1], 0, 0, 420, 437.5);
+//         keyrecorder = keyrecorder + "B"
+//     } else if (aNoteInside < 15.5) {
+//         clear();
+//         pitches[2].play();
+//         image(img[2], 0, 0, 420, 437.5);
+//         keyrecorder = keyrecorder + "D"
+//     } else if (bNoteInside < 15.5) {
+//         clear();
+//         pitches[3].play();
+//         image(img[3], 0, 0, 420, 437.5);
+//         keyrecorder = keyrecorder + "C"
+//     } else if (d2NoteInside < 15.5) {
+//         clear();
+//         pitches[4].play();
+//         image(img[4], 0, 0, 420, 437.5);
+//         keyrecorder = keyrecorder + "A"
+//     }
+// }
 
 function mouseReleased() {
     clear();
@@ -222,43 +288,42 @@ function keyReleased() {
     image(img[5], 0, 0, 420, 437.5);
 }
 
-function touchStarted() {
-    image(img[1], 0, 0, 420, 437.5);
-    // var dNoteInside = dist(mouseX, mouseY, 124, 413);
-    // var fNoteInside = dist(mouseX, mouseY, 168, 402);
-    // var aNoteInside = dist(mouseX, mouseY, 210, 388);
-    // var bNoteInside = dist(mouseX, mouseY, 253, 375);
-    // var d2NoteInside = dist(mouseX, mouseY, 296, 364);
+// function touchStarted() {
+//     var dNoteInside = dist(mouseX, mouseY, 124, 413);
+//     var fNoteInside = dist(mouseX, mouseY, 168, 402);
+//     var aNoteInside = dist(mouseX, mouseY, 210, 388);
+//     var bNoteInside = dist(mouseX, mouseY, 253, 375);
+//     var d2NoteInside = dist(mouseX, mouseY, 296, 364);
 
-    // if (dNoteInside < 15.5) {
-    //     clear();
-    //     pitches[0].play();
-    //     image(img[0], 0, 0, 420, 437.5);
-    //     keyrecorder = keyrecorder + "E"
-    // } else if (fNoteInside < 15.5) {
-    //     clear();
-    //     pitches[1].play();
-    //     image(img[1], 0, 0, 420, 437.5);
-    //     keyrecorder = keyrecorder + "B"
-    // } else if (aNoteInside < 15.5) {
-    //     clear();
-    //     pitches[2].play();
-    //     image(img[2], 0, 0, 420, 437.5);
-    //     keyrecorder = keyrecorder + "D"
-    // } else if (bNoteInside < 15.5) {
-    //     clear();
-    //     pitches[3].play();
-    //     image(img[3], 0, 0, 420, 437.5);
-    //     keyrecorder = keyrecorder + "C"
-    // } else if (d2NoteInside < 15.5) {
-    //     clear();
-    //     pitches[4].play();
-    //     image(img[4], 0, 0, 420, 437.5);
-    //     keyrecorder = keyrecorder + "A"
-    // }
-}
+//     if (dNoteInside < 15.5) {
+//         clear();
+//         pitches[0].play();
+//         image(img[0], 0, 0, 420, 437.5);
+//         keyrecorder = keyrecorder + "E"
+//     } else if (fNoteInside < 15.5) {
+//         clear();
+//         pitches[1].play();
+//         image(img[1], 0, 0, 420, 437.5);
+//         keyrecorder = keyrecorder + "B"
+//     } else if (aNoteInside < 15.5) {
+//         clear();
+//         pitches[2].play();
+//         image(img[2], 0, 0, 420, 437.5);
+//         keyrecorder = keyrecorder + "D"
+//     } else if (bNoteInside < 15.5) {
+//         clear();
+//         pitches[3].play();
+//         image(img[3], 0, 0, 420, 437.5);
+//         keyrecorder = keyrecorder + "C"
+//     } else if (d2NoteInside < 15.5) {
+//         clear();
+//         pitches[4].play();
+//         image(img[4], 0, 0, 420, 437.5);
+//         keyrecorder = keyrecorder + "A"
+//     }
+// }
 
-function touchEnded() {
-    clear();
-    image(img[5], 0, 0, 420, 437.5);    
-}
+// function touchEnded() {
+//     clear();
+//     image(img[5], 0, 0, 420, 437.5);    
+// }

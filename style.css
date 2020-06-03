@@ -7,7 +7,11 @@ background-size: cover;
 }
 
 .cc-centered {
-    display:inline-block;
-    float:none;
-    text-align: center;
+display:inline-block;
+float:none;
+text-align: center;
+}
+
+button { 
+cursor: pointer;
 }
