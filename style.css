@@ -1,9 +1,6 @@
 .cc-background {
-background-image: url('images/background.png');
-background-position: center center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
+background: rgb(255,193,193);
+background: linear-gradient(90deg, rgba(255,193,193,1) 0%, rgba(247,159,181,1) 100%); 
 }
 
 .cc-centered {
